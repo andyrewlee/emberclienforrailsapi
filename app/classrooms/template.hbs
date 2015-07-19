@@ -1,0 +1,19 @@
+<h1>Classrooms</h1>
+<div>
+  title: {{input value=name}} <button {{action 'addClassroom'}}>Add</button> 
+</div>
+
+
+{{#each model as |classroom|}}
+<p>
+  {{classroom.name}}
+  {{#link-to 'classrooms.edit_classroom' classroom.id}}
+    edit
+  {{/link-to}}
+  <button {{action 'deleteClassroom' classroom}}>delete</button>
+</p>
+{{/each}}
+
+<div>
+  {{outlet}}
+</div>
